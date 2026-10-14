@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dark theme; the light theme is in values. -->
+<resources>
+    <color name="bg">#161826</color>
+    <color name="surface">#232532</color>
+    <color name="surface_high">#2C2F40</color>
+    <color name="divider">#3F424D</color>
+    <color name="text">#E9E9ED</color>
+    <color name="text_muted">#9397AB</color>
+    <color name="accent">#9184D9</color>
+    <color name="accent_soft">#2B2741</color>
+    <color name="accent_light">#B5ABFC</color>
+    <color name="section">#262A60</color>
+    <color name="danger">#E07A86</color>
+    <color name="ok">#7BC8A4</color>
+    <color name="warn">#E5C07B</color>
+    <color name="on_accent">#161826</color>
+    <color name="sheen">#F5F4FF</color>
+</resources>

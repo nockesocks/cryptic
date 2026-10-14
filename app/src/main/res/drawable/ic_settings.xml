@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Gear (24dp) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:fillType="evenOdd"
+        android:pathData="M10.3,2h3.4l0.5,2.6a8,8 0 0 1 1.9,1.1l2.5,-0.9 1.7,2.9 -2,1.7a8,8 0 0 1 0,2.2l2,1.7 -1.7,2.9 -2.5,-0.9a8,8 0 0 1 -1.9,1.1L13.7,22h-3.4l-0.5,-2.6a8,8 0 0 1 -1.9,-1.1l-2.5,0.9 -1.7,-2.9 2,-1.7a8,8 0 0 1 0,-2.2l-2,-1.7 1.7,-2.9 2.5,0.9a8,8 0 0 1 1.9,-1.1z M12,8.5a3.5,3.5 0 1 0 0,7a3.5,3.5 0 1 0 0,-7z" />
+</vector>

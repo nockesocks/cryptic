@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Themed-icon layer (Android 13+): the padlock as one silhouette with the keyhole cut out -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- 0.66 about the centre, as the home-page padlock, so the body clears the circular mask; translateY centres the
+         shut padlock (shackle top 28 … body bottom 83, middle 55.5) on the circle: -1.5 units × 0.66 -->
+    <group android:pivotX="54" android:pivotY="54" android:scaleX="0.66" android:scaleY="0.66" android:translateY="-0.99">
+    <path
+        android:pathData="M42,51 V43 a12,12 0 0 1 24,0 V51"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+    <path
+        android:fillType="evenOdd"
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M37,49 h34 a7,7 0 0 1 7,7 v20 a7,7 0 0 1 -7,7 h-34 a7,7 0 0 1 -7,-7 v-20 a7,7 0 0 1 7,-7 z M54,58 a4.5,4.5 0 0 0 -2.4,8.3 l-1.1,7.2 h7 l-1.1,-7.2 A4.5,4.5 0 0 0 54,58 z" />
+    </group>
+</vector>

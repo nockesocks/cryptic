@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Notification and in-app padlock (24dp) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:pathData="M8,10.5 V8 a4,4 0 0 1 8,0 V10.5"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+    <path
+        android:fillType="evenOdd"
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M7,10 h10 a2,2 0 0 1 2,2 v7 a2,2 0 0 1 -2,2 h-10 a2,2 0 0 1 -2,-2 v-7 a2,2 0 0 1 2,-2 z M12,13 a1.5,1.5 0 0 0 -0.8,2.8 l-0.4,2.2 h2.4 l-0.4,-2.2 A1.5,1.5 0 0 0 12,13 z" />
+</vector>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Launch splash: the padlock unlocks like a real one. The shackle lifts, then turns half a revolution about its right
+  leg (which stays in the body), so the arc and free leg end up outside to the right; drawn as a horizontal flip about
+  x=66. That is the pose LockIcon starts from on the home page, where it swings back left, drops and locks. Same 108-unit geometry as ic_launcher_foreground.
+  Total 700 ms = windowSplashScreenAnimationDuration.
+-->
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:width="108dp"
+            android:height="108dp"
+            android:viewportWidth="108"
+            android:viewportHeight="108">
+            <path android:pathData="M0,0h108v108h-108z">
+                <aapt:attr name="android:fillColor">
+                    <gradient android:type="linear" android:startX="0" android:startY="0" android:endX="108" android:endY="108"
+                        android:startColor="#262A60" android:endColor="#161826" />
+                </aapt:attr>
+            </path>
+            <!-- the splash shows a 72-unit circle: the padlock at 0.66 so the turned-out shackle fits with the body centred -->
+            <group android:name="fit" android:pivotX="54" android:pivotY="54" android:scaleX="0.66" android:scaleY="0.66">
+            <!-- centres the shut padlock (shackle top 28 … body bottom 83) on the circle -->
+            <group android:name="shift" android:translateY="-1.5">
+            <group android:name="lift">
+                <group android:name="swing" android:pivotX="66" android:pivotY="51">
+                    <path
+                        android:pathData="M42,51 V43 a12,12 0 0 1 24,0 V63"
+                        android:strokeColor="#B5ABFC"
+                        android:strokeWidth="6"
+                        android:strokeLineCap="round"
+                        android:fillColor="#00000000" />
+                </group>
+            </group>
+            <path android:pathData="M37,49 h34 a7,7 0 0 1 7,7 v20 a7,7 0 0 1 -7,7 h-34 a7,7 0 0 1 -7,-7 v-20 a7,7 0 0 1 7,-7 z">
+                <aapt:attr name="android:fillColor">
+                    <gradient android:type="linear" android:startX="30" android:startY="49" android:endX="78" android:endY="83"
+                        android:startColor="#B5ABFC" android:endColor="#796CBF" />
+                </aapt:attr>
+            </path>
+            <path
+                android:pathData="M54,58 a4.5,4.5 0 0 1 2.4,8.3 l1.1,7.2 h-7 l1.1,-7.2 A4.5,4.5 0 0 1 54,58 z"
+                android:fillColor="#161826" />
+            <path
+                android:name="light"
+                android:pathData="M70,77 m-2,0 a2,2 0 1 0 4,0 a2,2 0 1 0 -4,0"
+                android:fillColor="#7BC8A4" />
+            </group>
+            </group>
+        </vector>
+    </aapt:attr>
+
+    <target android:name="lift">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:propertyName="translateY"
+                android:valueFrom="0"
+                android:valueTo="-7"
+                android:startOffset="120"
+                android:duration="260"
+                android:interpolator="@android:interpolator/decelerate_cubic" />
+        </aapt:attr>
+    </target>
+    <target android:name="swing">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:propertyName="scaleX"
+                android:valueFrom="1"
+                android:valueTo="-1"
+                android:startOffset="380"
+                android:duration="320"
+                android:interpolator="@android:interpolator/accelerate_decelerate" />
+        </aapt:attr>
+    </target>
+    <target android:name="light">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:propertyName="fillColor"
+                android:valueFrom="#7BC8A4"
+                android:valueTo="#59506E"
+                android:valueType="colorType"
+                android:startOffset="120"
+                android:duration="200" />
+        </aapt:attr>
+    </target>
+</animated-vector>
