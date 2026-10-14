@@ -17,6 +17,7 @@ class SettingsActivity : LockedActivity() {
         super.onCreate(savedInstanceState)
         val col = ui.column(16)
         col.addView(ui.back("Settings") { finish() })
+        col.addView(ui.card().apply { updates(this) })
 
         col.addView(ui.section("Appearance"))
         col.addView(ui.card().apply {
@@ -116,8 +117,23 @@ class SettingsActivity : LockedActivity() {
         }
     }
 
+    private val version get() = runCatching { packageManager.getPackageInfo(packageName, 0).versionName }.getOrNull() ?: ""
+
+    /** No network access, so no update check of our own: the latest release opens in the browser to compare by eye. */
+    private fun updates(card: LinearLayout) {
+        card.addView(ui.note("Installed version", top = 0))
+        card.addView(android.widget.TextView(this).apply {
+            text = "Cryptic $version"; textSize = 22f; setTextColor(getColor(R.color.text))
+            typeface = android.graphics.Typeface.create("sans-serif-medium", android.graphics.Typeface.NORMAL)
+        })
+        card.addView(ui.note("Opens the latest release on GitHub in your browser. If its version is newer, download the APK there and open it to update."))
+        card.addView(ui.full(ui.button("Check for updates", Ui.Kind.PRIMARY) {
+            runCatching { startActivity(Intent(Intent.ACTION_VIEW, android.net.Uri.parse(RELEASES))) }
+                .onFailure { Toast.makeText(this, "No browser on this phone can open the release page.", Toast.LENGTH_LONG).show() }
+        }, top = 14))
+    }
+
     private fun about(card: LinearLayout) {
-        val version = runCatching { packageManager.getPackageInfo(packageName, 0).versionName }.getOrDefault("")
         card.addView(android.widget.LinearLayout(this).apply {
             gravity = android.view.Gravity.CENTER_VERTICAL
             addView(LockIcon(this@SettingsActivity, shut = true), android.widget.LinearLayout.LayoutParams(ui.dp(44), ui.dp(44)))   // the home padlock, still
@@ -152,6 +168,7 @@ class SettingsActivity : LockedActivity() {
         /** Off for now; the log is still kept on the device. */
         private const val SHOW_LOG_SHARE = false
         private const val SCROLL_ID = 1
+        private const val RELEASES = "https://github.com/nockesocks/cryptic-app/releases/latest"
     }
 
     private fun shareLog() {
