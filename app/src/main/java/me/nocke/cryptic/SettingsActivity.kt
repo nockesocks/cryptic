@@ -168,7 +168,7 @@ class SettingsActivity : LockedActivity() {
         /** Off for now; the log is still kept on the device. */
         private const val SHOW_LOG_SHARE = false
         private const val SCROLL_ID = 1
-        private const val RELEASES = "https://github.com/nockesocks/cryptic-app/releases/latest"
+        private const val RELEASES = "https://github.com/nockesocks/cryptic/releases/latest"
     }
 
     private fun shareLog() {
