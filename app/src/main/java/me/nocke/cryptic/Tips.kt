@@ -8,7 +8,7 @@ import android.widget.Toast
 /** Where tips go. Cryptic has no network access: the tip page opens in the browser, which fetches the live invoice or price. */
 object Tips {
     /** The tip web page (Lightning via Strike, Monero at the live price); `?amount=N` preselects $N, `app` tells the page which app the tip is for. */
-    const val PAGE = "https://nullsocks.github.io/tip/"
+    const val PAGE = "https://nockesocks.github.io/tip/"
 
     fun open(context: Context, usd: Int) {
         runCatching { context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("$PAGE?amount=$usd&app=cryptic"))) }
